@@ -94,18 +94,18 @@ const MyTabs = () => {
   return (
 
     <div className={classes.demo2}>
-    <StyledTabs value={value} onChange={handleChange} aria-label="styled tabs example">
-      <StyledTab label="Gráficos" />
-      <StyledTab label="Tabelas" />
-    </StyledTabs>
-    <Typography className={classes.padding} />
-    <TabPanel value={value} index={0}>
-        <Graphics />
-    </TabPanel>
-    <TabPanel value={value} index={1}>
-        <Table />
-    </TabPanel>
-  </div>
+      <StyledTabs test-id="styled-tab" value={value} onChange={handleChange} aria-label="styled tabs example">
+        <StyledTab label="Gráficos" aria-label="graficos" />
+        <StyledTab label="Tabelas" aria-label="tabelas" />
+      </StyledTabs>
+      <Typography className={classes.padding} />
+      <TabPanel value={value} index={0}>
+          <Graphics />
+      </TabPanel>
+      <TabPanel value={value} index={1} >
+          <Table />
+      </TabPanel>
+    </div>
   )
 
 }

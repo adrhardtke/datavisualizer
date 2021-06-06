@@ -22,10 +22,10 @@ const MyNavBar = () => {
         <div className={classes.root}>
         <AppBar position="static" color="transparent" style={{boxShadow: 'none'}}>
             <Toolbar>               
-                <Typography variant="h6" className={classes.title}>
+                <Typography role="project-name" variant="h6" className={classes.title}>
                     DataVisualizer
                 </Typography>
-                <Link href="https://github.com/adrhardtke/datavisualizer" target="_blank" rel="noreferrer">
+                <Link role="link" href="https://github.com/adrhardtke/datavisualizer" target="_blank" rel="noreferrer">
                   <Button color="inherit">View on Github</Button><GithubIcon size="20" />
                 </Link>
             </Toolbar>

@@ -69,7 +69,7 @@ const DenseTable = () => {
   const notPercentValueList = ['Curso']
 
   return (
-    <>
+    <div aria-label="table-page">
       {
         dataTables?.map(({ title, options }) => (
           <TableContainer component={Paper} style={{marginTop: '2rem'}}>
@@ -95,7 +95,7 @@ const DenseTable = () => {
           </TableContainer>
         ))
       }
-    </>
+    </div>
   );
 }
 

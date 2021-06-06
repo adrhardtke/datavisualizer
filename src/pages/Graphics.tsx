@@ -40,7 +40,7 @@ const Graphics = () => {
     }, [])
 
     return (
-        <>
+        <div aria-label="graphic-page">
           <FormControl variant="outlined" className={classes.formControl}>
               <InputLabel id="demo-simple-select-outlined-label">Opções</InputLabel>
               <Select
@@ -68,7 +68,7 @@ const Graphics = () => {
                 data={selectData.responses.map(res => res.value)}
               />}           
           </GraphicWrapper>
-        </>
+        </div>
     )
 }
 

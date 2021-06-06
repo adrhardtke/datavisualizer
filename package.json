@@ -51,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "@react-mock/state": "^0.1.8",
     "@types/styled-components": "^5.1.9",
     "chart.js": "^3.3.2"
   }

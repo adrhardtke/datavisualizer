@@ -30,7 +30,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start:backend": "json-server --watch db.json -p 3001",
-    "start:frontend": "react-scripts start"
+    "start:frontend": "react-scripts start",
+    "test:jest": "jest",
+    "test:coverage": "nyc npm test:jest"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +55,7 @@
   "devDependencies": {
     "@react-mock/state": "^0.1.8",
     "@types/styled-components": "^5.1.9",
-    "chart.js": "^3.3.2"
+    "chart.js": "^3.3.2",
+    "nyc": "^15.1.0"
   }
 }

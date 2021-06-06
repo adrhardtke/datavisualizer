@@ -93,7 +93,7 @@ const MyTabs = () => {
 
   return (
 
-    <div className={classes.demo2}>
+    <div className={classes.demo2} aria-label="tabs">
       <StyledTabs test-id="styled-tab" value={value} onChange={handleChange} aria-label="styled tabs example">
         <StyledTab label="Gráficos" aria-label="graficos" />
         <StyledTab label="Tabelas" aria-label="tabelas" />

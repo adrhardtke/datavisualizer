@@ -19,7 +19,7 @@ const MyNavBar = () => {
 
     return (
 
-        <div className={classes.root}>
+        <div className={classes.root} aria-label="navbar">
         <AppBar position="static" color="transparent" style={{boxShadow: 'none'}}>
             <Toolbar>               
                 <Typography role="project-name" variant="h6" className={classes.title}>

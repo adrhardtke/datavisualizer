@@ -2,6 +2,7 @@ import React from 'react'
 import { AiFillGithub as GithubIcon } from 'react-icons/ai'
 import { Paper, Tabs, Tab, makeStyles, withStyles, createStyles, Theme, Typography, Box } from '@material-ui/core'
 import Graphics from '../../pages/Graphics';
+import Table from '../../pages/Table';
 
 interface StyledTabsProps {
   value: number;
@@ -100,6 +101,9 @@ const MyTabs = () => {
     <Typography className={classes.padding} />
     <TabPanel value={value} index={0}>
         <Graphics />
+    </TabPanel>
+    <TabPanel value={value} index={1}>
+        <Table />
     </TabPanel>
   </div>
   )

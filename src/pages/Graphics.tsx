@@ -1,5 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { GraphicWrapper } from './styles'
+import Graphic from '../components/Graphic1'
 import { FormControl, InputLabel, Select, MenuItem, makeStyles, createStyles, Theme } from "@material-ui/core";
+import { getDataList } from '../service/Data';
+import { DataType } from '../types/DataType';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -16,30 +20,55 @@ const useStyles = makeStyles((theme: Theme) =>
 const Graphics = () => {
 
     const classes = useStyles();
-    const [age, setAge] = React.useState('');
+    const [selectDataValue, setSelectDataValue] = useState('')
+    const [selectData, setSelectData] = useState<DataType | null>()
+    const [dataOptions, setDataOptions] = useState<DataType[]>([])
   
     const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-      setAge(event.target.value as string);
+      setSelectDataValue(event.target.value as string);
+      
+      const _selectData = dataOptions.find(dt => dt.title === event.target.value)
+
+      if(_selectData) setSelectData(_selectData)
+
     };
 
+    useEffect(() => {
+      getDataList().then(({data}) => {
+        setDataOptions(data)
+      })
+    }, [])
+
     return (
-        <FormControl variant="outlined" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-outlined-label">Data</InputLabel>
-        <Select
-          labelId="demo-simple-select-outlined-label"
-          id="demo-simple-select-outlined"
-          value={age}
-          onChange={handleChange}
-          label="Data"
-        >
-          <MenuItem value="">
-            <em>Nenhum</em>
-          </MenuItem>
-          <MenuItem value={10}>Example data 1</MenuItem>
-          <MenuItem value={20}>Example data 2</MenuItem>
-          <MenuItem value={30}>Example data 3</MenuItem>
-        </Select>
-      </FormControl>
+        <>
+          <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel id="demo-simple-select-outlined-label">Opções</InputLabel>
+              <Select
+                labelId="demo-simple-select-outlined-label"
+                id="demo-simple-select-outlined"
+                value={selectDataValue}
+                onChange={handleChange}
+                label="Opções"
+              >
+                <MenuItem value="">
+                  <em>Nenhum</em>
+                </MenuItem>
+                {
+                  dataOptions.map(({title, id}) => (
+                    <MenuItem key={id} value={title}>{title}</MenuItem>
+                  ))
+                }               
+              </Select>
+          </FormControl>
+          <GraphicWrapper>
+            {selectData && 
+              <Graphic
+                label={selectData.title}
+                labels={selectData.responses.map(res => res.option)}
+                data={selectData.responses.map(res => res.value)}
+              />}           
+          </GraphicWrapper>
+        </>
     )
 }
 

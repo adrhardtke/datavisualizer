@@ -1,6 +1,6 @@
 import React from 'react'
 import { AiFillGithub as GithubIcon } from 'react-icons/ai'
-import { AppBar, Toolbar, IconButton, Typography, Button, makeStyles } from '@material-ui/core'
+import { AppBar, Toolbar, IconButton, Typography, Button, makeStyles, Link } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,7 +25,9 @@ const MyNavBar = () => {
                 <Typography variant="h6" className={classes.title}>
                     DataVisualizer
                 </Typography>
-                <Button color="inherit">View on Github</Button><GithubIcon size="20" />
+                <Link href="https://github.com/adrhardtke/datavisualizer" target="_blank" rel="noreferrer">
+                  <Button color="inherit">View on Github</Button><GithubIcon size="20" />
+                </Link>
             </Toolbar>
         </AppBar>
         </div>

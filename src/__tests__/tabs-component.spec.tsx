@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen, waitForElement } from '@testing-library/react';
-import Tabs from '.';
+import Tabs from '../components/Tabs';
 import { StateMock } from '@react-mock/state'
 
 describe('Tabs', () => {

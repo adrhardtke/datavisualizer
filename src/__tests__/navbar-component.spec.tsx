@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Navbar from '.';
+import Navbar from '../components/Navbar';
 
 describe('Github Button', () => {
     //deve renderizar o button

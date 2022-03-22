@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const Graphics = () => {
-
     const classes = useStyles();
     const [selectDataValue, setSelectDataValue] = useState('')
     const [selectData, setSelectData] = useState<DataType | null>()
